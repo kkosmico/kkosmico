@@ -10,6 +10,7 @@ import pt.lisbon.db.flavour.entities.Dishes;
 import pt.lisbon.db.flavour.enums.DishesType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -86,5 +87,13 @@ public class DishesDAO {
             LOG.info(e.getMessage());
         }
         return null;
+    }
+
+    public List<DishesDTO> getDishesDTO(DishesType type) {
+
+        List<DishesType> types = new ArrayList<DishesType>();
+        types.add(type);
+
+        return getDishesDTO(types);
     }
 }

@@ -18,6 +18,6 @@ public class Testing {
         types.add(DishesType.MEAT);
         types.add(DishesType.FISH);
 
-        List<DishesDTO> dishes = controller.getDishesByType(types);
+        List<DishesDTO> dishes = controller.getDishesByTypes(types);
     }
 }

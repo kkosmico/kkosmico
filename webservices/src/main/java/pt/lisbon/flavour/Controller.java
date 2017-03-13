@@ -18,13 +18,24 @@ public class Controller {
 
     private final Logger LOG = Logger.getLogger(getClass());
 
-    @RequestMapping("/getDishesByType")
-    public List<DishesDTO> getDishesByType(@RequestParam(value = "types") List<DishesType> types){
+    @RequestMapping("/getDishesByTypes")
+    public List<DishesDTO> getDishesByTypes(@RequestParam(value = "types") List<DishesType> types){
 
         LOG.info("Received [types:" + types + "]");
 
         DishesDAO dao = new DishesDAO();
         return dao.getDishesDTO(types);
+
+    }
+
+
+    @RequestMapping("/getDishesByType")
+    public List<DishesDTO> getDishesByType(@RequestParam(value = "type") DishesType type){
+
+        LOG.info("Received [type:" + type + "]");
+
+        DishesDAO dao = new DishesDAO();
+        return dao.getDishesDTO(type);
 
     }
 
